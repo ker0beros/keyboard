@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct KeyboardActionView: View {
+    
+    var keyboardProtocol: KeyboardProtocol?
+    
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: KeyboardView.spacing) {
@@ -15,9 +18,9 @@ struct KeyboardActionView: View {
                     HStack(spacing: KeyboardView.spacing) {
                         ForEach(KeyboardActionViewModelImp.actionGrid[index], id: \.self) { action in
                                 Button {
-                                    // binding
+                                    keyboardProtocol?.action(action)
                                 } label: {
-                                    Text(action.rawValue) // TODO use custom font
+                                    Text(action.rawValue)
                                 }
                                 .frame(width: width(geometry), height: action == .enter ? enterHeight(geometry) : height(geometry))
                                 .background(.red)

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		156A9467278EAB1C002BF15B /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156A9466278EAB1C002BF15B /* LaunchScreen.swift */; };
+		156C080C278ECA2700D47048 /* KeyboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C080B278ECA2700D47048 /* KeyboardProtocol.swift */; };
+		156C080E278ECB0400D47048 /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C080D278ECB0400D47048 /* KeyboardViewModel.swift */; };
 		159AC535278D6D810020077F /* KeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159AC534278D6D810020077F /* KeyboardApp.swift */; };
 		159AC537278D6D810020077F /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159AC536278D6D810020077F /* KeyboardView.swift */; };
 		159AC539278D6D840020077F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159AC538278D6D840020077F /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		156A9466278EAB1C002BF15B /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		156C080B278ECA2700D47048 /* KeyboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardProtocol.swift; sourceTree = "<group>"; };
+		156C080D278ECB0400D47048 /* KeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
 		159AC531278D6D810020077F /* Keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		159AC534278D6D810020077F /* KeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardApp.swift; sourceTree = "<group>"; };
 		159AC536278D6D810020077F /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				159AC536278D6D810020077F /* KeyboardView.swift */,
+				156C080D278ECB0400D47048 /* KeyboardViewModel.swift */,
+				156C080B278ECA2700D47048 /* KeyboardProtocol.swift */,
 				159AC551278D708D0020077F /* Alphabet */,
 				159AC554278D70A50020077F /* Numeric */,
 				159AC557278D70C70020077F /* Action */,
@@ -193,7 +199,9 @@
 				159AC550278D70870020077F /* KeyboardAlphabetViewModel.swift in Sources */,
 				159AC54E278D6FEA0020077F /* KeyboardActionView.swift in Sources */,
 				156A9467278EAB1C002BF15B /* LaunchScreen.swift in Sources */,
+				156C080E278ECB0400D47048 /* KeyboardViewModel.swift in Sources */,
 				159AC537278D6D810020077F /* KeyboardView.swift in Sources */,
+				156C080C278ECA2700D47048 /* KeyboardProtocol.swift in Sources */,
 				159AC556278D70C30020077F /* KeyboardActionViewModel.swift in Sources */,
 				159AC553278D70A10020077F /* KeyboardNumericViewModel.swift in Sources */,
 				159AC535278D6D810020077F /* KeyboardApp.swift in Sources */,

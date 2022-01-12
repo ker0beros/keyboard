@@ -9,6 +9,8 @@ import SwiftUI
 
 struct KeyboardView: View {
     
+    @StateObject private var vm = KeyboardViewModelImp()
+    
     static let spacing: CGFloat = 2
     static let cornerRadius: CGFloat = 6
     
@@ -16,11 +18,11 @@ struct KeyboardView: View {
         HStack {
             GeometryReader { geometry in
                 HStack(spacing: KeyboardView.spacing) {
-                    KeyboardAlphabetView()
+                    KeyboardAlphabetView(keyboardProtocol: vm)
                         .frame(width: viewWidth(geometry, buttonCount: KeyboardAlphabetViewModelImp.firstRowCount))
-                    KeyboardNumericView()
+                    KeyboardNumericView(keyboardProtocol: vm)
                         .frame(width: viewWidth(geometry, buttonCount: KeyboardNumericViewModelImp.firstRowCount))
-                    KeyboardActionView()
+                    KeyboardActionView(keyboardProtocol: vm)
                         .frame(width: viewWidth(geometry, buttonCount: KeyboardActionViewModelImp.firstRowCount))
                 }
                 .frame(height: viewHeight(geometry))

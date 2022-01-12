@@ -9,6 +9,8 @@ import SwiftUI
 
 struct KeyboardNumericView: View {
         
+    var keyboardProtocol: KeyboardProtocol?
+    
     var body: some View { // TODO refactor
         GeometryReader { geometry in
             VStack(spacing: KeyboardView.spacing) {
@@ -16,7 +18,7 @@ struct KeyboardNumericView: View {
                     HStack(spacing: KeyboardView.spacing) {
                         ForEach(KeyboardNumericViewModelImp.numericGrid[index], id: \.self) { numeric in
                                 Button {
-                                    // binding
+                                    keyboardProtocol?.character(numeric.rawValue)
                                 } label: {
                                     Text(numeric.rawValue) // TODO use custom font
                                 }
