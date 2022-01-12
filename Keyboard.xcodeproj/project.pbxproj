@@ -17,7 +17,6 @@
 		159AC550278D70870020077F /* KeyboardAlphabetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159AC54F278D70870020077F /* KeyboardAlphabetViewModel.swift */; };
 		159AC553278D70A10020077F /* KeyboardNumericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159AC552278D70A10020077F /* KeyboardNumericViewModel.swift */; };
 		159AC556278D70C30020077F /* KeyboardActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159AC555278D70C30020077F /* KeyboardActionViewModel.swift */; };
-		159AC559278D73A20020077F /* KeyboardGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159AC558278D73A20020077F /* KeyboardGroupView.swift */; };
 		159AC55B278D77A50020077F /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159AC55A278D77A50020077F /* KeyboardViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +32,6 @@
 		159AC54F278D70870020077F /* KeyboardAlphabetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAlphabetViewModel.swift; sourceTree = "<group>"; };
 		159AC552278D70A10020077F /* KeyboardNumericViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNumericViewModel.swift; sourceTree = "<group>"; };
 		159AC555278D70C30020077F /* KeyboardActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardActionViewModel.swift; sourceTree = "<group>"; };
-		159AC558278D73A20020077F /* KeyboardGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGroupView.swift; sourceTree = "<group>"; };
 		159AC55A278D77A50020077F /* KeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +86,6 @@
 			children = (
 				159AC536278D6D810020077F /* KeyboardView.swift */,
 				159AC55A278D77A50020077F /* KeyboardViewModel.swift */,
-				159AC558278D73A20020077F /* KeyboardGroupView.swift */,
 				159AC551278D708D0020077F /* Alphabet */,
 				159AC554278D70A50020077F /* Numeric */,
 				159AC557278D70C70020077F /* Action */,
@@ -200,7 +197,6 @@
 				159AC556278D70C30020077F /* KeyboardActionViewModel.swift in Sources */,
 				159AC553278D70A10020077F /* KeyboardNumericViewModel.swift in Sources */,
 				159AC535278D6D810020077F /* KeyboardApp.swift in Sources */,
-				159AC559278D73A20020077F /* KeyboardGroupView.swift in Sources */,
 				159AC54C278D6FDE0020077F /* KeyboardAlphabetView.swift in Sources */,
 				159AC54A278D6FCC0020077F /* KeyboardNumericView.swift in Sources */,
 			);

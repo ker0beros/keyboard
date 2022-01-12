@@ -7,8 +7,4 @@
 
 import Foundation
 
-final class KeyboardViewModel {
-
-    
-    
-}
+final class KeyboardViewModel {}

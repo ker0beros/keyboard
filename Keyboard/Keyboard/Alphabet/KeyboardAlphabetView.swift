@@ -10,7 +10,7 @@ import SwiftUI
 struct KeyboardAlphabetView: View {
     
     @StateObject private var vm = KeyboardAlphabetViewModelImp()
-    
+    // TODO handle button tap action
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: KeyboardView.spacing) {
@@ -18,9 +18,13 @@ struct KeyboardAlphabetView: View {
                     HStack(spacing: KeyboardView.spacing) {
                         ForEach(vm.alphabetsGrid[index], id: \.self) { alphabet in
                                 Button {
-                                    print("handle action of \(alphabet)")
+                                    if alphabet == .shift {
+                                        vm.toggleCase()
+                                    } else {
+                                        // binding
+                                    }
                                 } label: {
-                                    Text(alphabet.rawValue)
+                                    Text(vm.uppercase ? alphabet.rawValue.uppercased() : alphabet.rawValue.lowercased())
                                 }
                                 .frame(width: alphabet == .space ? spaceWidth(geometry) : width(geometry), height: height(geometry))
                                 .background(.green)

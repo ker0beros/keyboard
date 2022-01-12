@@ -9,11 +9,11 @@ import Foundation
 
 enum KeyboardAlphabet: String {
     case A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
-    case at = "@", shift, exclamation = "!", question = "?", leftParenthesis = "(", rightParenthesis = ")", dollar = "$", space = " ", plus = "+", minus = "-", percentage = "%", dot = "."
+    case at = "@", shift, exclamation = "!", question = "?", leftParenthesis = "(", rightParenthesis = ")", dollar = "$", space = " ", plus = "+", minus = "-", percentage = "%"
 }
 
 protocol KeyboardAlphabetProtocol: ObservableObject {
-    func toggleUppercase()
+    func toggleCase()
 }
 
 final class KeyboardAlphabetViewModelImp: KeyboardAlphabetProtocol {
@@ -27,7 +27,7 @@ final class KeyboardAlphabetViewModelImp: KeyboardAlphabetProtocol {
     
     @Published var uppercase: Bool = true
     
-    func toggleUppercase() {
+    func toggleCase() {
         uppercase.toggle()
     }
 }
