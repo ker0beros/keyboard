@@ -17,23 +17,13 @@ struct KeyboardAlphabetView: View {
                 ForEach(vm.alphabetsGrid.indices) { index in
                     HStack(spacing: KeyboardView.spacing) {
                         ForEach(vm.alphabetsGrid[index], id: \.self) { alphabet in
-    //                        if alphabet == .space {
-    //                            Button {
-    //                                print("handle action of \(alphabet)")
-    //                            } label: {
-    //                                Text(alphabet.rawValue)
-    //                            }
-    //                            .frame(maxWidth: ., maxHeight: .infinity)
-    //                            .background(.green)
-    //                        } else {
                                 Button {
                                     print("handle action of \(alphabet)")
                                 } label: {
                                     Text(alphabet.rawValue)
                                 }
-                                .frame(width: geometry.size.width / 10, height: geometry.size.height / 4)
+                                .frame(width: alphabet == .space ? spaceWidth(geometry) : width(geometry), height: height(geometry))
                                 .background(.green)
-    //                        }
                         }
                     }
                 }
@@ -41,12 +31,23 @@ struct KeyboardAlphabetView: View {
         }
     }
     
-    func width(_ geometry: GeometryProxy, alphabet: KeyboardAlphabet) -> CGFloat {
-        
+    private func width(_ geometry: GeometryProxy) -> CGFloat {
+        let count = vm.alphabetsGrid.first?.count ?? 1
+        let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
+        return (geometry.size.width - totalGaps) / CGFloat(count)
     }
     
-    func height() -> CGFloat {
-        
+    private func spaceWidth(_ geometry: GeometryProxy) -> CGFloat {
+        let count = vm.alphabetsGrid.last?.count ?? 1
+        let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
+        let totalWidth = width(geometry) * CGFloat(count - 1)
+        return geometry.size.width - totalGaps - totalWidth
+    }
+    
+    private func height(_ geometry: GeometryProxy) -> CGFloat {
+        let count = vm.alphabetsGrid.count
+        let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
+        return (geometry.size.height - totalGaps) / CGFloat(count)
     }
 }
 
