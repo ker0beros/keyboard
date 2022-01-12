@@ -30,13 +30,13 @@ struct KeyboardNumericView: View {
     }
     
     private func width(_ geometry: GeometryProxy) -> CGFloat {
-        let count = KeyboardNumericViewModelImp.numericGrid.first?.count ?? 1
+        let count = KeyboardNumericViewModelImp.firstRowCount
         let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
         return (geometry.size.width - totalGaps) / CGFloat(count)
     }
     
     private func zeroWidth(_ geometry: GeometryProxy) -> CGFloat {
-        let count = KeyboardNumericViewModelImp.numericGrid.last?.count ?? 1
+        let count = KeyboardNumericViewModelImp.lastRowCount
         let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
         let totalWidth = width(geometry) * CGFloat(count - 1)
         return geometry.size.width - totalGaps - totalWidth

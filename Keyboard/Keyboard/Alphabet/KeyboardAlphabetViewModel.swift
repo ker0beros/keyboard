@@ -25,6 +25,14 @@ final class KeyboardAlphabetViewModelImp: KeyboardAlphabetProtocol {
         [.leftParenthesis, .rightParenthesis, .dollar, .space, .plus, .minus, .percentage]
     ]
     
+    static var firstRowCount: Int {
+        alphabetsGrid.first?.count ?? 0
+    }
+    
+    static var lastRowCount: Int {
+        alphabetsGrid.last?.count ?? 0
+    }
+    
     @Published var uppercase: Bool = true
     
     func toggleCase() {

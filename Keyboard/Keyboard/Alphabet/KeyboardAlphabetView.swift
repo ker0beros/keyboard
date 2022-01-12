@@ -36,13 +36,13 @@ struct KeyboardAlphabetView: View {
     }
     
     private func width(_ geometry: GeometryProxy) -> CGFloat {
-        let count = KeyboardAlphabetViewModelImp.alphabetsGrid.first?.count ?? 1
+        let count = KeyboardAlphabetViewModelImp.firstRowCount
         let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
         return (geometry.size.width - totalGaps) / CGFloat(count)
     }
     
     private func spaceWidth(_ geometry: GeometryProxy) -> CGFloat {
-        let count = KeyboardAlphabetViewModelImp.alphabetsGrid.last?.count ?? 1
+        let count = KeyboardAlphabetViewModelImp.lastRowCount
         let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
         let totalWidth = width(geometry) * CGFloat(count - 1)
         return geometry.size.width - totalGaps - totalWidth

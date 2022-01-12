@@ -11,9 +11,7 @@ enum KeyboardAction: String {
     case backspace, clear, enter
 }
 
-protocol KeyboardActionProtocol: ObservableObject {}
-
-final class KeyboardActionViewModelImp: KeyboardActionProtocol {
+final class KeyboardActionViewModelImp {
     
     static let actionGrid: [[KeyboardAction]] = [
         [.backspace],
@@ -21,4 +19,7 @@ final class KeyboardActionViewModelImp: KeyboardActionProtocol {
         [.enter]
     ]
     
+    static var firstRowCount: Int {
+        actionGrid.first?.count ?? 0
+    }
 }
