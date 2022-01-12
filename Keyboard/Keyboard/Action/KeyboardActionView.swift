@@ -9,7 +9,42 @@ import SwiftUI
 
 struct KeyboardActionView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            VStack(spacing: KeyboardView.spacing) {
+                ForEach(KeyboardActionViewModelImp.actionGrid.indices) { index in
+                    HStack(spacing: KeyboardView.spacing) {
+                        ForEach(KeyboardActionViewModelImp.actionGrid[index], id: \.self) { action in
+                                Button {
+                                    // binding
+                                } label: {
+                                    Text(action.rawValue) // TODO use custom font
+                                }
+                                .frame(width: width(geometry), height: action == .enter ? enterHeight(geometry) : height(geometry))
+                                .background(.red)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private func width(_ geometry: GeometryProxy) -> CGFloat {
+        let count = KeyboardActionViewModelImp.actionGrid.first?.count ?? 1
+        let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
+        return (geometry.size.width - totalGaps) / CGFloat(count)
+    }
+    
+    private func height(_ geometry: GeometryProxy) -> CGFloat {
+        let count = KeyboardNumericViewModelImp.numericGrid.count
+        let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
+        return (geometry.size.height - totalGaps) / CGFloat(count)
+    }
+    
+    private func enterHeight(_ geometry: GeometryProxy) -> CGFloat {
+        let count = KeyboardNumericViewModelImp.numericGrid.count
+        let totalGaps = CGFloat(count - 2) * KeyboardView.spacing
+        let totalHeight = height(geometry) * CGFloat(count - 2)
+        return geometry.size.height - totalGaps - totalHeight
     }
 }
 

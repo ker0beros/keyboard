@@ -15,7 +15,7 @@ protocol KeyboardNumericProtocol: ObservableObject {}
 
 final class KeyboardNumericViewModelImp: KeyboardNumericProtocol {
     
-    let numericGrid: [[KeyboardNumeric]] = [
+    static let numericGrid: [[KeyboardNumeric]] = [
         [.seven, .eight, .nine],
         [.four, .five, .six],
         [.one, .two, .three],

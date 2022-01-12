@@ -14,9 +14,9 @@ struct KeyboardAlphabetView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: KeyboardView.spacing) {
-                ForEach(vm.alphabetsGrid.indices) { index in
+                ForEach(KeyboardAlphabetViewModelImp.alphabetsGrid.indices) { index in
                     HStack(spacing: KeyboardView.spacing) {
-                        ForEach(vm.alphabetsGrid[index], id: \.self) { alphabet in
+                        ForEach(KeyboardAlphabetViewModelImp.alphabetsGrid[index], id: \.self) { alphabet in
                                 Button {
                                     if alphabet == .shift {
                                         vm.toggleCase()
@@ -36,20 +36,20 @@ struct KeyboardAlphabetView: View {
     }
     
     private func width(_ geometry: GeometryProxy) -> CGFloat {
-        let count = vm.alphabetsGrid.first?.count ?? 1
+        let count = KeyboardAlphabetViewModelImp.alphabetsGrid.first?.count ?? 1
         let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
         return (geometry.size.width - totalGaps) / CGFloat(count)
     }
     
     private func spaceWidth(_ geometry: GeometryProxy) -> CGFloat {
-        let count = vm.alphabetsGrid.last?.count ?? 1
+        let count = KeyboardAlphabetViewModelImp.alphabetsGrid.last?.count ?? 1
         let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
         let totalWidth = width(geometry) * CGFloat(count - 1)
         return geometry.size.width - totalGaps - totalWidth
     }
     
     private func height(_ geometry: GeometryProxy) -> CGFloat {
-        let count = vm.alphabetsGrid.count
+        let count = KeyboardAlphabetViewModelImp.alphabetsGrid.count
         let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
         return (geometry.size.height - totalGaps) / CGFloat(count)
     }

@@ -18,7 +18,7 @@ protocol KeyboardAlphabetProtocol: ObservableObject {
 
 final class KeyboardAlphabetViewModelImp: KeyboardAlphabetProtocol {
 
-    let alphabetsGrid: [[KeyboardAlphabet]] = [
+    static let alphabetsGrid: [[KeyboardAlphabet]] = [
         [.Q, .W, .E, .R, .T, .Y, .U, .I, .O, .P],
         [.A, .S, .D, .F, .G, .H, .J, .K, .L, .at],
         [.shift, .Z, .X, .C, .V, .B, .N, .M, .exclamation, .question],

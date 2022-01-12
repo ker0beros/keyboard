@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+enum KeyboardAction: String {
+    case backspace, clear, enter
+}
+
+protocol KeyboardActionProtocol: ObservableObject {}
+
+final class KeyboardActionViewModelImp: KeyboardActionProtocol {
+    
+    static let actionGrid: [[KeyboardAction]] = [
+        [.backspace],
+        [.clear],
+        [.enter]
+    ]
+    
+}
