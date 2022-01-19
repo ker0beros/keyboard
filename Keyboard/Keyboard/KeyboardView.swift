@@ -20,10 +20,13 @@ struct KeyboardView: View {
                 HStack(spacing: KeyboardView.spacing) {
                     KeyboardAlphabetView(keyboardProtocol: vm)
                         .frame(width: viewWidth(geometry, buttonCount: KeyboardAlphabetViewModelImp.firstRowCount))
-                    KeyboardNumericView(keyboardProtocol: vm)
-                        .frame(width: viewWidth(geometry, buttonCount: KeyboardNumericViewModelImp.firstRowCount))
-                    KeyboardActionView(keyboardProtocol: vm)
-                        .frame(width: viewWidth(geometry, buttonCount: KeyboardActionViewModelImp.firstRowCount))
+                        .buttonStyle(KeyboardButtonStyle())
+//                    KeyboardNumericView(keyboardProtocol: vm)
+//                        .frame(width: viewWidth(geometry, buttonCount: KeyboardNumericViewModelImp.firstRowCount))
+////                        .buttonStyle(KeyboardButtonStyle(isNumeric: true))
+//                    KeyboardActionView(keyboardProtocol: vm)
+//                        .frame(width: viewWidth(geometry, buttonCount: KeyboardActionViewModelImp.firstRowCount))
+//                        .buttonStyle(KeyboardButtonStyle())
                 }
                 .frame(height: viewHeight(geometry))
                 .offset(y: geometry.size.height - viewHeight(geometry))

@@ -19,7 +19,7 @@ struct KeyboardAlphabetView: View {
                 ForEach(KeyboardAlphabetViewModelImp.alphabetsGrid.indices) { index in
                     HStack(spacing: KeyboardView.spacing) {
                         ForEach(KeyboardAlphabetViewModelImp.alphabetsGrid[index], id: \.self) { alphabet in
-                                Button {
+                                Button { // TODO: Make a custom view
                                     if alphabet == .shift {
                                         vm.toggleCase()
                                     } else {
@@ -31,14 +31,13 @@ struct KeyboardAlphabetView: View {
                                 }
                                 .frame(width: alphabet == .space ? spaceWidth(geometry) : width(geometry), height: height(geometry))
                                 
-                                .background(.green)
                         }
                     }
                 }
-            }
+            }.background(.green)
         }
     }
-    
+ 
     private func width(_ geometry: GeometryProxy) -> CGFloat {
         let count = KeyboardAlphabetViewModelImp.firstRowCount
         let totalGaps = CGFloat(count - 1) * KeyboardView.spacing
@@ -63,6 +62,9 @@ struct KeyboardAlphabetView_Previews: PreviewProvider {
     static var previews: some View {
         KeyboardAlphabetView()
             .previewInterfaceOrientation(.landscapeRight)
+            .previewLayout(.sizeThatFits)
+        KeyboardAlphabetView()
+            .previewInterfaceOrientation(.portrait)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -11,7 +11,7 @@ struct KeyboardNumericView: View {
         
     var keyboardProtocol: KeyboardProtocol?
     
-    var body: some View { // TODO refactor
+    var body: some View {
         GeometryReader { geometry in
             VStack(spacing: KeyboardView.spacing) {
                 ForEach(KeyboardNumericViewModelImp.numericGrid.indices) { index in
@@ -21,6 +21,7 @@ struct KeyboardNumericView: View {
                                     keyboardProtocol?.character(numeric.rawValue)
                                 } label: {
                                     Text(numeric.rawValue) // TODO use custom font
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 }
                                 .frame(width: numeric == .zero ? zeroWidth(geometry) : width(geometry), height: height(geometry))
                                 .background(.yellow)

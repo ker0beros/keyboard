@@ -11,9 +11,7 @@ protocol KeyboardViewModel: ObservableObject {}
 
 final class KeyboardViewModelImp: KeyboardViewModel {
     
-    
-    
-    
+
 }
 
 extension KeyboardViewModelImp: KeyboardProtocol {

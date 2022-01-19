@@ -21,6 +21,7 @@ struct KeyboardActionView: View {
                                     keyboardProtocol?.action(action)
                                 } label: {
                                     Text(action.rawValue)
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 }
                                 .frame(width: width(geometry), height: action == .enter ? enterHeight(geometry) : height(geometry))
                                 .background(.red)
